@@ -1,4 +1,11 @@
 <div id="<%= dom_id article %>">
+    <% article.photos.each do |photo|  %>
+      <% if photo.key %>
+          <%= cl_image_tag photo.key%>
+      <% else %>
+        <%= image_tag article.photo %>
+      <% end %>
+    <% end %> 
   <p>
     <strong>Title:</strong>
     <%= article.title %>
